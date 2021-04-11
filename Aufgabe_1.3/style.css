@@ -7,6 +7,14 @@
     width: 800px;
 
 }
+.footstyle{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    background: turquoise;
+    width: 800px;
+    text-align: center;
+
+}
 .navstyle a{
     float: right;
     display: block;
@@ -25,7 +33,7 @@
     margin: 0 auto;
     padding: 18px;
     margin-top: 35px;
-    height: 2000px;
+    height: auto;
     width: 800px;
 }
 .containerforstupidnav{
@@ -53,3 +61,33 @@ body{
     background-color: blueviolet;
     
 }
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-reddit {
+    background: red;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #0077B5;
+    color: white;
+  }
+
+  

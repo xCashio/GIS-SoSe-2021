@@ -19,12 +19,14 @@
             </div>
         </div>
     </header>
+
     <div class="container">
     <main>
-        
+        <div class="divbox">
             <h1>Contact me</h1>
-
+        </div>
             <h2>Contact</h2>
+            <div class="divbox">
             <table>
                 <thead>
                     <tr>
@@ -52,18 +54,32 @@
                 </tbody>
 
             </table>
-            <h2>Social Media</h2>
-            <img src="media/social_media_icons.jpg" alt="social media icons">
-            <p>I don't use most of the common social media platforms except for Twitter and special stuff like
-                MyAnimeList. Here is a short list (without handles bc this stuff is private :^) ):</p>
-            <ul>
-                <li>Twitter</li>
-                <li>MyAnimeList</li>
-                <li>Letterboxd</li>
-                <li>Snapchat</li>
-                <li>LinkedIn</li>
-            </ul>
-
+            <p>You can use the form below to send me a mail.</p>
+            </div>
+            <h2>Contact Form</h2>
+            <div class="divbox">
+            <form action="#">                                                                   
+                <fieldset>
+                    <label for="name"> Name </label>
+                    <input type="text" name="name" id="name" required>
+                    <div>
+                        <label for="email"> Mail </label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="betreff"> Subject </label>
+                        <input type="text" name="betreff" id="betreff" required>
+                    </div>
+                    <div>                                   
+                        <textarea id="textfeld" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="termsncons">
+                        By sending this mail you accept the <a id="termsncons" href="#">terms & conditions</a>.
+                    </div>
+                    <button type="submit"> Send </button>                                           
+                </fieldset>
+            </form>
+            </div>
     </main>
 
     <footer id="footer">

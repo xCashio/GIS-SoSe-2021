@@ -14,7 +14,7 @@
     text-align: center;
 
 }
-.navstyle a{
+.navstyle a{                        /*complex selector 1*/
     float: right;
     display: block;
     color: lightgray;
@@ -23,7 +23,7 @@
     text-decoration: none;
     font-size: 20px;
 }
-.navstyle a:hover{
+.navstyle a:hover{                  /*complex selector 2*/
     color: cornflowerblue;
 }
 .container{
@@ -102,8 +102,15 @@ body{
     margin: 0 auto;
     
 }
-h3{
+.divbox h3{                           /*complex selector 3*/      
     text-align: center;
+}
+.divbox a{                          /*complex selector 4*/
+    color: black;
+    text-decoration: none;
+}
+.divbox a:hover{                    /*complex selector 5*/
+    background-color: yellow;
 }
 
   
@@ -211,7 +218,7 @@ video{
     padding: 15px; 
     background-image:url(media/codepic.jpg);
 }
-.divboxheading h1{
+.divboxheading h1{                     /*complex selector 6*/
     color: white;
     opacity: 0.9;
 }

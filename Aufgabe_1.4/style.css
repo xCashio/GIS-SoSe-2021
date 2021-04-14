@@ -1,16 +1,15 @@
 .navstyle{
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
-    background: turquoise;
+    background: #333333;
     position: fixed;
     top: 0;
-    width: 800px;
-
+    width: 800px;    
 }
 .footstyle{
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
-    background: turquoise;
+    background: #333333;
     width: 800px;
     text-align: center;
 
@@ -18,7 +17,7 @@
 .navstyle a{
     float: right;
     display: block;
-    color: black;
+    color: lightgray;
     text-align: center;
     padding: 15px;
     text-decoration: none;
@@ -50,15 +49,17 @@ body{
 }
 
 #contacthighlight{
-        background-color: blueviolet;
-        
+    background-image: url(media/bg.png);
+        color: #333333;
 }
 #abouthighlight{
-    background-color: blueviolet;
+    background-image: url(media/bg.png);
+    color: #333333;
     
 }
 #indexhighlight{
-    background-color: blueviolet;
+    background-image: url(media/bg.png);
+    color: #333333;
     
 }
 .fa {
@@ -96,7 +97,8 @@ body{
   h2{
     text-align: center;
     padding: 20px;
-    background-color: turquoise;
+    color: lightgray;
+    background-color: #333333;
     margin: 0 auto;
     
 }
@@ -175,12 +177,11 @@ button{
 }
 table, th, td{
 
-    border: 3px solid turquoise;
+    border: 3px solid black;
 }
 table{
     width: 100%;
     border-collapse: collapse;
-    background-color: lightblue;
 }
 th,td{
     text-align: center;
@@ -199,9 +200,23 @@ video{
 }
 .divbox{
     width: 750;
-    border: 20px solid turquoise;
-    padding: 15px;
+    border: 20px solid #333333;
+    padding: 15px; 
 }
+
+.divboxheading{
+    width: 750;
+    border: 20px solid #333333;
+    opacity: 1;
+    padding: 15px; 
+    background-image:url(media/codepic.jpg);
+}
+.divboxheading h1{
+    color: white;
+    opacity: 0.9;
+}
+
+
 .pdf{
     width: 100%;
     height: 720px;

@@ -229,3 +229,21 @@ video{
     height: 720px;
 }
   
+
+.headingmove{
+  color: black;
+  
+  position: relative;
+  animation-name: headingmove;
+  animation-duration: 4s;
+  
+}
+
+@keyframes headingmove {
+    0%   {background-image: url(media/bg.png); left:-600px; top:0px;}
+    25%  {background-color:#333333; left:200px; top:0px;}
+    60%  {background-image: url(media/codepic.jpg); left:200px; top:200px;}
+    50%  {background-color:#333333; left:0px; top:200px;}
+    75%  {background-color:#333333; left:0px; top:150px;}
+    100% {background-color:transparent; left:0px; top:0px;}
+  }

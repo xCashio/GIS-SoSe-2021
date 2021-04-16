@@ -104,7 +104,7 @@ body{
     margin: 0 auto;
     
 }
-.divbox h3{                              
+.divbox>h3{                              
     text-align: center;
 }
 .divbox a{                         
@@ -324,7 +324,7 @@ video{
       table{
           max-width: 100%;
       }
-      .tablepictures{
+      table>img{
           max-width: 100%;
       }
       video{
@@ -335,6 +335,9 @@ video{
     }
     h1{
         font-size: 40px;
+    }
+    .divboxheading>h2{
+        font-size: 20px;
     }
 
     

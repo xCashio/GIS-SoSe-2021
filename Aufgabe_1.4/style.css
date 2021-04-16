@@ -338,19 +338,16 @@ video{
     }
     .divboxheading>h2{
         font-size: 20px;
-    }
-   
+    }  
     input{
         width: 75%;
-    }
-    
+    }  
     #textfeld{
        max-width: 75%;
     }
     form{
         max-width: 100%;
         width: 100%;
-    }
-    
+    }   
   }
   

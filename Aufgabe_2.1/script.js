@@ -220,8 +220,9 @@ for (let i: number = 0; i < 101; i++) {
 */
 /*d)*/
 let blackField = "#";
-let whiteField = " ";
+let whiteField = "+";
 let chessboard = "";
+let lastField = "";
 /*
 for (let i: number = 0; i < 8; i++) {
     if (i % 2 == 0) {
@@ -242,22 +243,110 @@ for (let i: number = 0; i < 8; i++) {
 console.log(chessboard);
 */
 /*e)*/
+/*
+function drawBoard(boardlenght: number): void {
+    for (let i: number = 0; i < boardlenght; i++) {
+        if (i % 2 == 0) {
+            for (let i: number = 0; i < boardlenght; i++) {
+                if (lastField == "+") {
+                    chessboard += blackField;
+                    lastField = "#";
+                }
+                else if (lastField == "#") {
+                    chessboard += whiteField;
+                    lastField = "+";
+                }
+                else {
+                    chessboard += whiteField;
+                    lastField = "+";
+                }
+            }
+            chessboard += "\n";
+        }
+        else if (i % 2 != 0) {
+            for (let i: number = 0; i < boardlenght; i++) {
+                if (lastField == "+") {
+                    chessboard += blackField;
+                    lastField = "#";
+                }
+                else if (lastField == "#") {
+                    chessboard += whiteField;
+                    lastField = "+";
+                }
+                else {
+                    chessboard += blackField;
+                    lastField = "#";
+                }
+            }
+            chessboard += "\n";
+        }
+    }
+    console.log(chessboard);
+}
+*/
+/*
+function drawBoard(boardlenght: number): void {
+    for (let i: number = 0; i < boardlenght; i++) {
+        for (let i: number = 0; i < boardlenght; i++) {
+            if (lastField == "+") {
+                chessboard += blackField;
+                lastField = "#";
+            }
+            else if (lastField == "#") {
+                chessboard += whiteField;
+                lastField = "+";
+            }
+            else {
+                chessboard += whiteField;
+                lastField = "+";
+            }
+        }
+        chessboard += "\n";
+    }
+    console.log(chessboard);
+}
+*/
+/*
+function drawBoard(boardlenght: number): void {
+    for (let h: number = 0; h < boardlenght; h++) {
+        for (let i: number = 0; i < boardlenght; i++) {
+            if (chessboard.charAt(i - 1) == "+") {
+                chessboard += blackField;
+            }
+            else if (chessboard.charAt(i - 1) == "#") {
+                chessboard += whiteField;
+            }
+            else {
+                if (h % 2 == 0)
+                chessboard += whiteField;
+                else
+                chessboard += blackField;
+            }
+        }
+        chessboard += "\n";
+    }
+    console.log(chessboard);
+}
+*/
+let row1 = "";
+let row2 = "";
 function drawBoard(boardlenght) {
     for (let i = 0; i < boardlenght; i++) {
         if (i % 2 == 0) {
-            for (let i = 0; i < boardlenght / 2; i++) {
-                chessboard += whiteField;
-                chessboard += blackField;
-            }
-            chessboard += "\n";
+            row1 += whiteField;
+            row2 += blackField;
         }
         else {
-            for (let i = 0; i < boardlenght / 2; i++) {
-                chessboard += blackField;
-                chessboard += whiteField;
-            }
-            chessboard += "\n";
+            row2 += whiteField;
+            row1 += blackField;
         }
+    }
+    for (let i = 0; i < boardlenght; i++) {
+        if (i % 2 == 0)
+            chessboard += row1;
+        else
+            chessboard += row2;
+        chessboard += "\n";
     }
     console.log(chessboard);
 }

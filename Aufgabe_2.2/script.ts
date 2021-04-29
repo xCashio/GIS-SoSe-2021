@@ -213,11 +213,11 @@ class Rectangle {
     cord3: number;
     cord4: number;
 
-    constructor(_cord1: number, _cord2: number, _cord3: number, _cord4: number) {
-        this.cord1 = _cord1;
-        this.cord2 = _cord2;
-        this.cord3 = _cord3;
-        this.cord4 = _cord4;
+    constructor() {
+        this.cord1 = Math.floor(Math.random() * 501);
+        this.cord2 = Math.floor(Math.random() * 401);
+        this.cord3 = Math.floor(Math.random() * 501);
+        this.cord4 = Math.floor(Math.random() * 401);
     }
 
     drawRect(): void {
@@ -228,12 +228,12 @@ class Rectangle {
 
 let rectArray: Rectangle[] = [];
 
-for (let i: number = 0; i < 20; i++) {
-    rectArray.push(new Rectangle(Math.floor(Math.random() * 501), Math.floor(Math.random() * 401), Math.floor(Math.random() * 501), Math.floor(Math.random() * 401)));
+for (let i: number = 0; i < 5; i++) {
+    rectArray.push(new Rectangle());
 }
 
 for (let i: number = 0; i < 5; i++) {
-    rectArray[Math.floor(Math.random() * 21)].drawRect();    
+    rectArray[i].drawRect();    
 }
 
 

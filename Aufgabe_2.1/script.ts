@@ -170,7 +170,7 @@ randomNums();
 
 /*e)*/
 
-/*
+
 function factorial (fac: number): number {
     let factor: number = 1;
     let result: number = 1;
@@ -178,11 +178,11 @@ function factorial (fac: number): number {
     do {
         result = result * factor;
         factor++;
-    } while (factor < fac + 1);
+    } while (factor <= fac);
     return result;
 }
 console.log(factorial(number1));
-*/
+
 
 /*f)*/
 

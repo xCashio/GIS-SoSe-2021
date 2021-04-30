@@ -208,20 +208,35 @@ let context2: CanvasRenderingContext2D = canvas2.getContext("2d");
 context2.lineWidth = 10;
 
 class Rectangle {
-    cord1: number;
-    cord2: number;
-    cord3: number;
-    cord4: number;
+    xCoord: number;
+    yCoord: number;
+    recWidth: number;
+    recHeight: number;
 
-    constructor() {
-        this.cord1 = Math.floor(Math.random() * 501);
-        this.cord2 = Math.floor(Math.random() * 401);
-        this.cord3 = Math.floor(Math.random() * 501);
-        this.cord4 = Math.floor(Math.random() * 401);
+    //statt einfachem Konstruktor mit rand werten wie in aufgaben einen "überladenen" Konstruktur der checkt ob eingabe da ist und wenn nicht mit random werten befüllt
+    constructor();
+    constructor(_cord1: number, _cord2: number, _cord3: number, _cord4: number);
+    constructor(_xCoord?: number, _yCoord?: number, _recWidth?: number, recHeight?: number) {
+        if (_xCoord === undefined) {
+            this.createRect();
+        }
+        else {
+            this.xCoord = _xCoord;
+            this.yCoord = _yCoord;
+            this.recWidth = _recWidth;
+            this.recHeight = recHeight;
+        }
+    }
+
+    createRect(): void {
+        this.xCoord = Math.floor(Math.random() * 501);
+        this.yCoord = Math.floor(Math.random() * 401);
+        this.recWidth = 50 + Math.floor(Math.random() * 201);
+        this.recHeight = 50 + Math.floor(Math.random() * 151);
     }
 
     drawRect(): void {
-        context2.fillRect(this.cord1, this.cord2, this.cord3, this.cord4);
+        context2.fillRect(this.xCoord, this.yCoord, this.recWidth, this.recHeight);
     }
 
 }
@@ -230,11 +245,7 @@ let rectArray: Rectangle[] = [];
 
 for (let i: number = 0; i < 5; i++) {
     rectArray.push(new Rectangle());
+    rectArray[i].drawRect();
 }
-
-for (let i: number = 0; i < 5; i++) {
-    rectArray[i].drawRect();    
-}
-
 
 //new Rectangle(250, 140, 150, 110), new Rectangle(450, 42, 77, 210), new Rectangle(50, 100, 150, 200), new Rectangle(300, 220, 300, 200), new Rectangle(11, 99, 66, 33), new Rectangle(75, 140, 150, 110), new Rectangle(10, 40, 50, 80), new Rectangle(470, 430, 450, 400)

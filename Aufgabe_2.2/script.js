@@ -199,5 +199,4 @@ for (let i = 0; i < 5; i++) {
     rectArray.push(new Rectangle());
     rectArray[i].drawRect();
 }
-//new Rectangle(250, 140, 150, 110), new Rectangle(450, 42, 77, 210), new Rectangle(50, 100, 150, 200), new Rectangle(300, 220, 300, 200), new Rectangle(11, 99, 66, 33), new Rectangle(75, 140, 150, 110), new Rectangle(10, 40, 50, 80), new Rectangle(470, 430, 450, 400)
 //# sourceMappingURL=script.js.map

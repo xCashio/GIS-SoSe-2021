@@ -194,9 +194,34 @@ class Rectangle {
         context2.fillRect(this.xCoord, this.yCoord, this.recWidth, this.recHeight);
     }
 }
-let rectArray = [];
-for (let i = 0; i < 5; i++) {
+/**
+ * Übungslösung mit Interface statt Klasse
+ */
+/*
+let rectArray: Rectangle[] = [];
+
+for (let i: number = 0; i < 5; i++) {
     rectArray.push(new Rectangle());
     rectArray[i].drawRect();
 }
+interface Rechteck {
+    xkoordinate: number;
+    y: number;
+    breit: number;
+    höhe: number;
+}
+
+function createRect2(): Rechteck {
+    let rechti: Rechteck = {xkoordinate: Math.floor(Math.random() * 501), y: Math.floor(Math.random() * 501), breit: Math.floor(Math.random() * 501), höhe: Math.floor(Math.random() * 501)};
+    return rechti;
+}
+function drawRect2(_rechti: Rechteck): void {
+    context2.fillRect(_rechti.xkoordinate, _rechti.y, _rechti.breit, _rechti.höhe);
+}
+let rectArray2: Rechteck[] = [];
+for (let i: number = 0; i < 5; i++) {
+    rectArray2.push(createRect2());
+    drawRect2(rectArray2[i]);
+}
+*/ 
 //# sourceMappingURL=script.js.map

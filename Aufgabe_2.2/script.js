@@ -194,6 +194,11 @@ class Rectangle {
         context2.fillRect(this.xCoord, this.yCoord, this.recWidth, this.recHeight);
     }
 }
+let rectArray = [];
+for (let i = 0; i < 5; i++) {
+    rectArray.push(new Rectangle);
+    rectArray[i].drawRect();
+}
 /**
  * Übungslösung mit Interface statt Klasse
  */

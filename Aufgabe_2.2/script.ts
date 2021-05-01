@@ -239,6 +239,11 @@ class Rectangle {
     }
 
 }
+let rectArray: Rectangle[] = [];
+for (let i: number = 0; i < 5; i++) {
+    rectArray.push(new Rectangle);
+    rectArray[i].drawRect();
+}
 
 /**
  * Übungslösung mit Interface statt Klasse

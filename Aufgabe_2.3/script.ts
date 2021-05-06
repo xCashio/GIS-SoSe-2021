@@ -25,7 +25,7 @@ namespace Aufgabe2_3_A1 {
     document.getElementById("resetButtId").addEventListener("click", resetWindow);
 
 /**
- * functions for Window resetting and creating Rectangle Divs
+ * Functions for Window resetting and creating Rectangle Divs
  */
     function resetWindow(): void {
         window.location.reload();
@@ -50,5 +50,6 @@ namespace Aufgabe2_3_A1 {
     }
 }
 namespace Aufgabe2_3 {
-    
+
+   
 }

@@ -20,7 +20,7 @@ var Aufgabe2_3_A1;
     document.getElementById("RecButtId").addEventListener("click", createDivRec);
     document.getElementById("resetButtId").addEventListener("click", resetWindow);
     /**
-     * functions for Window resetting and creating Rectangle Divs
+     * Functions for Window resetting and creating Rectangle Divs
      */
     function resetWindow() {
         window.location.reload();

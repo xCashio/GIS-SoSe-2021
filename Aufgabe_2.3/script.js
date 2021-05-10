@@ -16,8 +16,8 @@ var Aufgabe2_3;
         chooseButton.id = "ChooseButtId";
         return div;
     }
-    for (let i = 0; i < waffles.length; i++) {
-        let waffleElements = createWaffleOptions(waffles[i]);
+    for (let i = 0; i < Aufgabe2_3.waffles.length; i++) {
+        let waffleElements = createWaffleOptions(Aufgabe2_3.waffles[i]);
         document.body.appendChild(waffleElements);
     }
 })(Aufgabe2_3 || (Aufgabe2_3 = {}));

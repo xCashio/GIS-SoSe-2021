@@ -21,6 +21,5 @@ namespace Aufgabe2_3 {
     for (let i: number = 0; i < waffles.length; i++) {
         let waffleElements: HTMLElement = createWaffleOptions(waffles[i]);
         document.body.appendChild(waffleElements);
-
     }
 }

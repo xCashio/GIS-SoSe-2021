@@ -1,62 +1,55 @@
 "use strict";
 var Aufgabe2_4;
 (function (Aufgabe2_4) {
-    //export let waffles: Waffle [] = [{waffleSort: "Chocolate Waffle", picture: "media/braunwaffel.png"}, {waffleSort: "Mango Waffle", picture: "media/orangewaffel.png"}, {waffleSort: "Strawberry Waffle", picture: "media/pinkwaffel.png"}];
-    //export let scoops: Scoop [] = [{scoopSort: "Chocolate", picture: "media/schoko.png"}, {scoopSort: "Mango", picture: "media/mango.png"}, {scoopSort: "Strawberry", picture: "media/erdbeere.png"}] ;
-    //export let creams: Cream [] = [{creamAmount: "Small", picture: "media/sahne1.png"}, {creamAmount: "Medium", picture: "media/sahne2.png"}, {creamAmount: "Large", picture: "media/sahne3.png"}] ;
-    Aufgabe2_4.waffles = `
-    {
+    Aufgabe2_4.waffles = [{ description: "Chocolate Waffle", picture: "media/braunwaffel.png" }, { description: "Mango Waffle", picture: "media/orangewaffel.png" }, { description: "Strawberry Waffle", picture: "media/pinkwaffel.png" }];
+    Aufgabe2_4.scoops = [{ description: "Chocolate", picture: "media/schoko.png" }, { description: "Mango", picture: "media/mango.png" }, { description: "Strawberry", picture: "media/erdbeere.png" }];
+    Aufgabe2_4.creams = [{ description: "Small", picture: "media/sahne1.png" }, { description: "Medium", picture: "media/sahne2.png" }, { description: "Large", picture: "media/sahne3.png" }];
+    let myIceCream = { waffles: Aufgabe2_4.waffles, scoops: Aufgabe2_4.scoops, creams: Aufgabe2_4.creams };
+    console.log(JSON.stringify(myIceCream));
+    Aufgabe2_4.allIceParts = `{
         "waffles": [
-            {
-                "waffleSort": "Chocolate Waffle",
-                "picture": "media/braunwaffel.png"
-            },
-            {
-                "waffleSort": "Mango Waffle",
-                "picture": "media/orangewaffel.png"
-            },
-            {
-                "waffleSort": "Strawberry Waffle",
-                "picture": "media/pinkwaffel.png"
-            }
-        ]
-    }
-    `;
-    Aufgabe2_4.scoops = `
-    {
+          {
+            "description": "Chocolate Waffle",
+            "picture": "media/braunwaffel.png"
+          },
+          {
+            "description": "Mango Waffle",
+            "picture": "media/orangewaffel.png"
+          },
+          {
+            "description": "Strawberry Waffle",
+            "picture": "media/pinkwaffel.png"
+          }
+        ],
         "scoops": [
-            {
-                "scoopSort": "Chocolate",
-                "picture": "media/schoko.png"
-            },
-            {
-                "scoopSort": "Mango",
-                "picture": "media/mango.png"
-            },
-            {
-                "scoopSort": "Strawberry",
-                "picture": "media/erdbeere.png"
-            }
-        ]
-    }
-    `;
-    Aufgabe2_4.creams = `
-    {
+          {
+            "description": "Chocolate",
+            "picture": "media/schoko.png"
+          },
+          {
+            "description": "Mango",
+            "picture": "media/mango.png"
+          },
+          {
+            "description": "Strawberry",
+            "picture": "media/erdbeere.png"
+          }
+        ],
         "creams": [
-            {
-                "creamAmount": "Small",
-                "picture": "media/sahne1.png"
-            },
-            {
-                "creamAmount": "Medium",
-                "picture": "media/sahne2.png"
-            },
-            {
-                "creamAmount": "Large",
-                "picture": "media/sahne3.png"
-            }
+          {
+            "description": "Small",
+            "picture": "media/sahne1.png"
+          },
+          {
+            "description": "Medium",
+            "picture": "media/sahne2.png"
+          },
+          {
+            "description": "Large",
+            "picture": "media/sahne3.png"
+          }
         ]
-    }
-    `;
+      }
+      `;
 })(Aufgabe2_4 || (Aufgabe2_4 = {}));
 //# sourceMappingURL=data.js.map

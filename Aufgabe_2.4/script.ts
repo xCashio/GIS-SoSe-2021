@@ -69,7 +69,7 @@ namespace Aufgabe2_4 {
 
     if (document.querySelector("title").getAttribute("id") == "site2") {
         let div: HTMLDivElement = document.createElement("div");
-        div.style.maxWidth = "250px";
+        div.style.maxWidth = "50px";
         document.body.appendChild(div);
         let descriptionChoosing: HTMLElement = document.createElement("p");
         let descriptionChoosingText: Text = document.createTextNode("So far you have chosen:");
@@ -83,8 +83,12 @@ namespace Aufgabe2_4 {
     }
     if (document.querySelector("title").getAttribute("id") == "site3") {
         let div: HTMLDivElement = document.createElement("div");
-        div.style.maxWidth = "250px";
+        div.style.maxWidth = "50px";
         document.body.appendChild(div);
+        let descriptionChoosing: HTMLElement = document.createElement("p");
+        let descriptionChoosingText: Text = document.createTextNode("So far you have chosen:");
+        descriptionChoosing.appendChild(descriptionChoosingText);
+        div.appendChild(descriptionChoosing);
       
         let pictureScoop: HTMLImageElement = document.createElement("img");
         pictureScoop.src = localStorage.getItem("chosenscoopPic");

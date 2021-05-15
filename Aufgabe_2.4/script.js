@@ -65,7 +65,7 @@ var Aufgabe2_4;
     }
     if (document.querySelector("title").getAttribute("id") == "site2") {
         let div = document.createElement("div");
-        div.style.maxWidth = "250px";
+        div.style.maxWidth = "50px";
         document.body.appendChild(div);
         let descriptionChoosing = document.createElement("p");
         let descriptionChoosingText = document.createTextNode("So far you have chosen:");
@@ -78,8 +78,12 @@ var Aufgabe2_4;
     }
     if (document.querySelector("title").getAttribute("id") == "site3") {
         let div = document.createElement("div");
-        div.style.maxWidth = "250px";
+        div.style.maxWidth = "50px";
         document.body.appendChild(div);
+        let descriptionChoosing = document.createElement("p");
+        let descriptionChoosingText = document.createTextNode("So far you have chosen:");
+        descriptionChoosing.appendChild(descriptionChoosingText);
+        div.appendChild(descriptionChoosing);
         let pictureScoop = document.createElement("img");
         pictureScoop.src = localStorage.getItem("chosenscoopPic");
         pictureScoop.style.width = "100%";

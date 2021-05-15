@@ -42,26 +42,23 @@ var Aufgabe2_4;
     function saveSelection(_input) {
         let output = _input.target;
         if (document.querySelector("title").getAttribute("id") == "site1") {
-            console.log("Your Choice:");
-            console.log(output.dataset.saveSort);
             localStorage.setItem("chosenwaffle", output.dataset.saveSort);
             localStorage.setItem("chosenwafflePic", output.dataset.savePicture);
+            console.log("Your Choice:"); //Konsolenausgabe zur Überprüfung
             console.log(localStorage.getItem("chosenwaffle"));
             console.log(localStorage.getItem("chosenwafflePic"));
         }
         if (document.querySelector("title").getAttribute("id") == "site2") {
-            console.log("Your Choice:");
-            console.log(output.dataset.saveSort);
             localStorage.setItem("chosenscoop", output.dataset.saveSort);
             localStorage.setItem("chosenscoopPic", output.dataset.savePicture);
+            console.log("Your Choice:");
             console.log(localStorage.getItem("chosenscoop"));
             console.log(localStorage.getItem("chosenscoopPic"));
         }
         if (document.querySelector("title").getAttribute("id") == "site3") {
-            console.log("Your Choice:");
-            console.log(output.dataset.saveSort);
             localStorage.setItem("chosencream", output.dataset.saveSort);
             localStorage.setItem("chosencreamPic", output.dataset.savePicture);
+            console.log("Your Choice:");
             console.log(localStorage.getItem("chosencream"));
             console.log(localStorage.getItem("chosencreamPic"));
         }

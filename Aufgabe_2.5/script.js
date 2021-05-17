@@ -4,9 +4,9 @@
  *
  * changed data to JSON String and adapted
  */
-var Aufgabe2_4;
-(function (Aufgabe2_4) {
-    let allIcePartsObject = JSON.parse(Aufgabe2_4.allIceParts);
+var Aufgabe2_5;
+(function (Aufgabe2_5) {
+    let allIcePartsObject = JSON.parse(Aufgabe2_5.allIceParts);
     function createPartOptions(_part) {
         let div = document.createElement("div");
         div.style.maxWidth = "150px";
@@ -112,5 +112,5 @@ var Aufgabe2_4;
         pictureWaffle.style.width = "100%";
         div.appendChild(pictureWaffle);
     }
-})(Aufgabe2_4 || (Aufgabe2_4 = {}));
+})(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script.js.map

@@ -1,6 +1,8 @@
 
 /**
- * Aufgabe 3
+ * Aufgabe 2.4
+ * 
+ * changed data to JSON String and adapted
  */
 
 namespace Aufgabe2_4 {

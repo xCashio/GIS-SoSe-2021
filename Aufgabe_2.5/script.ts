@@ -163,7 +163,7 @@ namespace Aufgabe2_5 {
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: Answer = await answer.json();
-        let displayResponse: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("3c");
+        let displayResponse: HTMLDivElement = <HTMLParagraphElement>document.getElementById("3c");
         if (output.error) {
             displayResponse.className = "Error";
             displayResponse.innerText = output.error;

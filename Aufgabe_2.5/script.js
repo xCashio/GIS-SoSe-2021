@@ -1,12 +1,11 @@
 "use strict";
 /**
- * Aufgabe 2.4
+ * Aufgabe 2.5
  *
- * changed data to JSON String and adapted
+ *
  */
 var Aufgabe2_5;
 (function (Aufgabe2_5) {
-    let allIcePartsObject = JSON.parse(Aufgabe2_5.allIceParts);
     function createPartOptions(_part) {
         let div = document.createElement("div");
         div.style.maxWidth = "150px";
@@ -23,22 +22,24 @@ var Aufgabe2_5;
         div.appendChild(chooseButton);
         return div;
     }
-    if (document.querySelector("title").getAttribute("id") == "site1") {
-        for (let i = 0; i < allIcePartsObject.waffles.length; i++) {
-            let iceElements = createPartOptions(allIcePartsObject.waffles[i]);
-            document.body.appendChild(iceElements);
+    function showOptions(_parts) {
+        if (document.querySelector("title").getAttribute("id") == "site1") {
+            for (let i = 0; i < _parts.waffles.length; i++) {
+                let iceElements = createPartOptions(_parts.waffles[i]);
+                document.body.appendChild(iceElements);
+            }
         }
-    }
-    if (document.querySelector("title").getAttribute("id") == "site2") {
-        for (let i = 0; i < allIcePartsObject.scoops.length; i++) {
-            let iceElements = createPartOptions(allIcePartsObject.scoops[i]);
-            document.body.appendChild(iceElements);
+        if (document.querySelector("title").getAttribute("id") == "site2") {
+            for (let i = 0; i < _parts.scoops.length; i++) {
+                let iceElements = createPartOptions(_parts.scoops[i]);
+                document.body.appendChild(iceElements);
+            }
         }
-    }
-    if (document.querySelector("title").getAttribute("id") == "site3") {
-        for (let i = 0; i < allIcePartsObject.creams.length; i++) {
-            let iceElements = createPartOptions(allIcePartsObject.creams[i]);
-            document.body.appendChild(iceElements);
+        if (document.querySelector("title").getAttribute("id") == "site3") {
+            for (let i = 0; i < _parts.creams.length; i++) {
+                let iceElements = createPartOptions(_parts.creams[i]);
+                document.body.appendChild(iceElements);
+            }
         }
     }
     function saveSelection(_input) {
@@ -112,5 +113,35 @@ var Aufgabe2_5;
         pictureWaffle.style.width = "100%";
         div.appendChild(pictureWaffle);
     }
+    /***
+     * 2.5b
+     */
+    async function getData(_url) {
+        let response = await fetch(_url);
+        console.log("Response: ", response);
+        let data = await response.json();
+        showOptions(data);
+    }
+    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    /**
+     * 2.5c
+     */
+    async function sendData(_url) {
+        let query = new URLSearchParams(localStorage);
+        console.log(query.toString());
+        _url = _url + "?" + query.toString();
+        let answer = await fetch(_url);
+        let output = await answer.json();
+        let displayResponse = document.getElementById("3c");
+        if (output.error) {
+            displayResponse.className = "Error";
+            displayResponse.innerText = output.error;
+        }
+        else {
+            displayResponse.className = "Message";
+            displayResponse.innerText = output.Message;
+        }
+    }
+    sendData("https://gis-communication.herokuapp.com");
 })(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script.js.map

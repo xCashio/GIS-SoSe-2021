@@ -6,7 +6,7 @@
  */
 
 namespace Aufgabe2_5 {
-    
+
     function createPartOptions(_part: IcePart): HTMLElement {
         let div: HTMLDivElement = document.createElement("div");
         div.style.maxWidth = "150px";
@@ -45,6 +45,7 @@ namespace Aufgabe2_5 {
             }
         }
     }
+
     function saveSelection(_input: MouseEvent): void {
         let output: HTMLElement = <HTMLElement>_input.target;
         if (document.querySelector("title").getAttribute("id") == "site1") {
@@ -147,4 +148,29 @@ namespace Aufgabe2_5 {
         showOptions(data);
     }
     getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+
+
+    /**
+     * 2.5c
+     */
+    async function sendData(_url: RequestInfo): Promise<void> {
+        let query: URLSearchParams = new URLSearchParams(localStorage);
+        console.log(query.toString());
+        _url = _url + "?" + query.toString();
+        let answer: Response = await fetch(_url);
+        let output = await answer.json();
+        let displayResponse: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("3c");
+        if (output.error) {
+            displayResponse.className = "Error";
+            displayResponse.innerText = output.error;
+        }
+        else {
+            displayResponse.className = "Message";
+            displayResponse.innerText = output.Message;
+        }
+
+
+    }
+    sendData("https://gis-communication.herokuapp.com");
+
 }

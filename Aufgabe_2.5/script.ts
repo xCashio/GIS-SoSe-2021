@@ -137,6 +137,9 @@ namespace Aufgabe2_5 {
         scoops: IcePart[];
         creams: IcePart[];
     }
+    export interface Answer {
+        [key: string]: string;
+    }
 
     /***
      * 2.5b
@@ -158,7 +161,7 @@ namespace Aufgabe2_5 {
         console.log(query.toString());
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
-        let output = await answer.json();
+        let output: Answer = await answer.json();
         let displayResponse: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("3c");
         if (output.error) {
             displayResponse.className = "Error";

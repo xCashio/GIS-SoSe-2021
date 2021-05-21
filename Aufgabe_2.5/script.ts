@@ -1,12 +1,12 @@
 
 /**
- * Aufgabe 2.4
+ * Aufgabe 2.5
  * 
- * changed data to JSON String and adapted
+ * 
  */
 
 namespace Aufgabe2_5 {
-    let allIcePartsObject: Ice = JSON.parse(allIceParts);
+    
     function createPartOptions(_part: IcePart): HTMLElement {
         let div: HTMLDivElement = document.createElement("div");
         div.style.maxWidth = "150px";
@@ -24,26 +24,27 @@ namespace Aufgabe2_5 {
         return div;
     }
 
+    function showOptions(_parts: Ice): void {
 
-    if (document.querySelector("title").getAttribute("id") == "site1") {
-        for (let i: number = 0; i < allIcePartsObject.waffles.length; i++) {
-            let iceElements: HTMLElement = createPartOptions(allIcePartsObject.waffles[i]);
-            document.body.appendChild(iceElements);
+        if (document.querySelector("title").getAttribute("id") == "site1") {
+            for (let i: number = 0; i < _parts.waffles.length; i++) {
+                let iceElements: HTMLElement = createPartOptions(_parts.waffles[i]);
+                document.body.appendChild(iceElements);
+            }
+        }
+        if (document.querySelector("title").getAttribute("id") == "site2") {
+            for (let i: number = 0; i < _parts.scoops.length; i++) {
+                let iceElements: HTMLElement = createPartOptions(_parts.scoops[i]);
+                document.body.appendChild(iceElements);
+            }
+        }
+        if (document.querySelector("title").getAttribute("id") == "site3") {
+            for (let i: number = 0; i < _parts.creams.length; i++) {
+                let iceElements: HTMLElement = createPartOptions(_parts.creams[i]);
+                document.body.appendChild(iceElements);
+            }
         }
     }
-    if (document.querySelector("title").getAttribute("id") == "site2") {
-        for (let i: number = 0; i < allIcePartsObject.scoops.length; i++) {
-            let iceElements: HTMLElement = createPartOptions(allIcePartsObject.scoops[i]);
-            document.body.appendChild(iceElements);
-        }
-    }
-    if (document.querySelector("title").getAttribute("id") == "site3") {
-        for (let i: number = 0; i < allIcePartsObject.creams.length; i++) {
-            let iceElements: HTMLElement = createPartOptions(allIcePartsObject.creams[i]);
-            document.body.appendChild(iceElements);
-        }
-    }
-
     function saveSelection(_input: MouseEvent): void {
         let output: HTMLElement = <HTMLElement>_input.target;
         if (document.querySelector("title").getAttribute("id") == "site1") {
@@ -123,6 +124,9 @@ namespace Aufgabe2_5 {
         div.appendChild(pictureWaffle);
     }
 
+    /**
+     * interfaces from data.ts T2.4
+     */
     export interface IcePart {
         description: string;
         picture: string;
@@ -132,4 +136,15 @@ namespace Aufgabe2_5 {
         scoops: IcePart[];
         creams: IcePart[];
     }
+
+    /***
+     * 2.5b
+     */
+    async function getData(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        console.log("Response: ", response);
+        let data: Ice = await response.json();
+        showOptions(data);
+    }
+    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
 }

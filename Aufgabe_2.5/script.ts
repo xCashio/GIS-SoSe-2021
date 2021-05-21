@@ -137,9 +137,9 @@ namespace Aufgabe2_5 {
         scoops: IcePart[];
         creams: IcePart[];
     }
-  /*  export interface Answer {
+    export interface Answer {
         [key: string]: string;
-    }*/
+    }
 
     /***
      * 2.5b
@@ -156,7 +156,7 @@ namespace Aufgabe2_5 {
     /**
      * 2.5c
      */
-    /*
+
     async function sendData(_url: RequestInfo): Promise<void> {
         let query: URLSearchParams = new URLSearchParams(localStorage);
         console.log(query.toString());
@@ -174,5 +174,5 @@ namespace Aufgabe2_5 {
         }
     }
     sendData("https://gis-communication.herokuapp.com");
-*/
+
 }

@@ -157,13 +157,12 @@ namespace Aufgabe2_5 {
      * 2.5c
      */
 
-    async function sendData(_url: RequestInfo): Promise<void> {
+    async function sendData(_url: RequestInfo): Promise <void> {
         let query: URLSearchParams = new URLSearchParams(localStorage);
-        console.log(query.toString());
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: Answer = await answer.json();
-        let displayResponse: HTMLDivElement = <HTMLParagraphElement>document.getElementById("3c");
+        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
         if (output.error) {
             displayResponse.className = "Error";
             displayResponse.innerText = output.error;

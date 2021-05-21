@@ -128,7 +128,6 @@ var Aufgabe2_5;
      */
     async function sendData(_url) {
         let query = new URLSearchParams(localStorage);
-        console.log(query.toString());
         _url = _url + "?" + query.toString();
         let answer = await fetch(_url);
         let output = await answer.json();

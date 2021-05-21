@@ -113,6 +113,9 @@ var Aufgabe2_5;
         pictureWaffle.style.width = "100%";
         div.appendChild(pictureWaffle);
     }
+    /*  export interface Answer {
+          [key: string]: string;
+      }*/
     /***
      * 2.5b
      */
@@ -126,13 +129,14 @@ var Aufgabe2_5;
     /**
      * 2.5c
      */
-    async function sendData(_url) {
-        let query = new URLSearchParams(localStorage);
+    /*
+    async function sendData(_url: RequestInfo): Promise<void> {
+        let query: URLSearchParams = new URLSearchParams(localStorage);
         console.log(query.toString());
         _url = _url + "?" + query.toString();
-        let answer = await fetch(_url);
-        let output = await answer.json();
-        let displayResponse = document.getElementById("3c");
+        let answer: Response = await fetch(_url);
+        let output: Answer = await answer.json();
+        let displayResponse: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("3c");
         if (output.error) {
             displayResponse.className = "Error";
             displayResponse.innerText = output.error;
@@ -143,5 +147,6 @@ var Aufgabe2_5;
         }
     }
     sendData("https://gis-communication.herokuapp.com");
+*/
 })(Aufgabe2_5 || (Aufgabe2_5 = {}));
 //# sourceMappingURL=script.js.map

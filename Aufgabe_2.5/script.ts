@@ -150,7 +150,7 @@ namespace Aufgabe2_5 {
         let data: Ice = await response.json();
         showOptions(data);
     }
-    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    getData("https://xcashio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
 
 
     /**

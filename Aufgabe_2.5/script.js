@@ -122,7 +122,7 @@ var Aufgabe2_5;
         let data = await response.json();
         showOptions(data);
     }
-    getData("https://github.com/xCashio/GIS-SoSe-2021/blob/main/Aufgabe_2.5/data.json");
+    getData("https://xcashio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
     /**
      * 2.5c
      */
@@ -133,11 +133,11 @@ var Aufgabe2_5;
         let output = await answer.json();
         let displayResponse = document.getElementById("3c");
         if (output.error) {
-            displayResponse.className = "Error";
+            displayResponse.className = "error";
             displayResponse.innerText = output.error;
         }
         else {
-            displayResponse.className = "Message";
+            displayResponse.className = "message";
             displayResponse.innerText = output.Message;
         }
     }

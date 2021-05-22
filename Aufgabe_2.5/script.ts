@@ -164,11 +164,11 @@ namespace Aufgabe2_5 {
         let output: Answer = await answer.json();
         let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
         if (output.error) {
-            displayResponse.className = "Error";
+            displayResponse.className = "error";
             displayResponse.innerText = output.error;
         }
         else {
-            displayResponse.className = "Message";
+            displayResponse.className = "message";
             displayResponse.innerText = output.Message;
         }
     }

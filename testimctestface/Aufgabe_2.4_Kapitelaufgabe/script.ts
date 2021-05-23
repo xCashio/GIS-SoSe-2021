@@ -4,12 +4,8 @@ namespace space24 {
         head: string[];
         eyes: string[];
         mouth: string[];
-        torso: string[];
-        legs: string[];
     }
     
-    let human: Human = JSON.parse(humanJSON);
-
     let headdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("headdiv");
     let eyesdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("eyesdiv");
     let mouthdiv: HTMLDivElement = <HTMLDivElement> document.getElementById("mouthdiv");
@@ -17,19 +13,20 @@ namespace space24 {
 
     let alloptions: NodeListOf<HTMLImageElement>;
 
+    function showalloptionswithdata(_parts: Human): void {
     if (document.getElementById("start") == null) {
 
         if (document.getElementById("bodyHead") != null) {
-            showalloptions(human.head, headdiv);
+            showalloptions(_parts.head, headdiv);
         }
 
         if (document.getElementById("bodyEyes") != null) {
-            showalloptions(human.eyes, eyesdiv);
+            showalloptions(_parts.eyes, eyesdiv);
             picks();
         }
 
         if (document.getElementById("bodyMouth") != null) {
-            showalloptions(human.mouth, mouthdiv);
+            showalloptions(_parts.mouth, mouthdiv);
             picks();
         }
 
@@ -41,7 +38,7 @@ namespace space24 {
     } else {
         localStorage.clear();
     }
-
+    }
 
     function showResult(): void {
         document.getElementById("resulthead").setAttribute("src", localStorage.getItem("selecthead"));
@@ -101,5 +98,31 @@ namespace space24 {
         }
     
     }
+    //b)
+    async function getData(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        console.log("Response: ", response);
+        let data: Human = await response.json();
+        showalloptionswithdata(data);
+    }
+    getData("https://dobsonstudio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
 
+    //c)
+    export interface Answer {
+        [key: string]: string;
+    }
+    async function sendData(_url: RequestInfo): Promise <void> {
+        let query: URLSearchParams = new URLSearchParams(localStorage);
+        _url = _url + "?" + query.toString();
+        let answer: Response = await fetch(_url);
+        let output: Answer = await answer.json();
+        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
+        if (output.error) {
+            displayResponse.innerText = output.error;   
+        }
+        if (output.message) {
+            displayResponse.innerText = output.Message;
+        }
+    }
+    sendData("https://gis-communication.herokuapp.com");
 }

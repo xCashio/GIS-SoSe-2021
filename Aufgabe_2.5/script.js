@@ -132,12 +132,12 @@ var Aufgabe2_5;
         let answer = await fetch(_url);
         let output = await answer.json();
         let displayResponse = document.getElementById("3c");
-        if (output.error) {
+        if (output.error != null) {
             //displayResponse.className = "error";
             displayResponse.innerText = output.error;
             console.log("I got an error");
         }
-        else {
+        if (output.message != null) {
             //displayResponse.className = "message";
             displayResponse.innerText = output.Message;
             console.log("I got a message");

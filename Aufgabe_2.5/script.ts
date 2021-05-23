@@ -166,10 +166,13 @@ namespace Aufgabe2_5 {
         if (output.error) {
             displayResponse.className = "error";
             displayResponse.innerText = output.error;
+            console.log("I got an error");
+            
         }
         else {
             displayResponse.className = "message";
             displayResponse.innerText = output.Message;
+            console.log("I got a message");
         }
     }
     sendData("https://gis-communication.herokuapp.com");

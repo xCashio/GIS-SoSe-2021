@@ -92,12 +92,14 @@ var space24;
         _url = _url + "?" + query.toString();
         let answer = await fetch(_url);
         let output = await answer.json();
-        let displayResponse = document.getElementById("3c");
+        let displayResponse = document.getElementById("errormessage");
         if (output.error) {
             displayResponse.innerText = output.error;
+            displayResponse.style.color = "red";
         }
         if (output.message) {
             displayResponse.innerText = output.Message;
+            displayResponse.style.color = "green";
         }
     }
     sendData("https://gis-communication.herokuapp.com");

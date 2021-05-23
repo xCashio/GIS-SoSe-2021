@@ -157,7 +157,7 @@ namespace Aufgabe2_5 {
      * 2.5c
      */
 
-    async function sendData(_url: RequestInfo): Promise <void> {
+    async function sendData(_url: RequestInfo): Promise<void> {
         let query: URLSearchParams = new URLSearchParams(localStorage);
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
@@ -167,9 +167,9 @@ namespace Aufgabe2_5 {
             //displayResponse.className = "error";
             displayResponse.innerText = output.error;
             console.log("I got an error");
-            
+
         }
-        if(output.message != null) {
+        if (output.message != null) {
             //displayResponse.className = "message";
             displayResponse.innerText = output.Message;
             console.log("I got a message");

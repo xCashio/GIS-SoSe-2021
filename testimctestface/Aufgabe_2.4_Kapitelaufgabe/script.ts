@@ -116,12 +116,14 @@ namespace space24 {
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: Answer = await answer.json();
-        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
+        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("errormessage");
         if (output.error) {
-            displayResponse.innerText = output.error;   
+            displayResponse.innerText = output.error;
+            displayResponse.style.color = "red";   
         }
         if (output.message) {
             displayResponse.innerText = output.Message;
+            displayResponse.style.color = "green"; 
         }
     }
     sendData("https://gis-communication.herokuapp.com");

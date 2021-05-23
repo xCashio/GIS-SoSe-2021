@@ -133,12 +133,12 @@ var Aufgabe2_5;
         let output = await answer.json();
         let displayResponse = document.getElementById("3c");
         if (output.error) {
-            displayResponse.className = "error";
+            //displayResponse.className = "error";
             displayResponse.innerText = output.error;
             console.log("I got an error");
         }
         else {
-            displayResponse.className = "message";
+            //displayResponse.className = "message";
             displayResponse.innerText = output.Message;
             console.log("I got a message");
         }

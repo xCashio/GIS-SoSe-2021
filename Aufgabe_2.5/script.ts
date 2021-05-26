@@ -150,31 +150,32 @@ namespace Aufgabe2_5 {
         let data: Ice = await response.json();
         showOptions(data);
     }
-    getData("https://xcashio.github.io/GIS-SoSe-2021/Aufgabe_2.5/data.json");
+    getData("./data.json");
 
 
     /**
      * 2.5c
      */
 
-    async function sendData(_url: RequestInfo): Promise<void> {
-        let query: URLSearchParams = new URLSearchParams(localStorage);
-        _url = _url + "?" + query.toString();
-        let answer: Response = await fetch(_url);
-        let output: Answer = await answer.json();
-        let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
-        if (output.error != null) {
-            //displayResponse.className = "error";
-            displayResponse.innerText = output.error;
-            console.log("I got an error");
+    if (document.querySelector("title").getAttribute("id") == "site4") {
+        async function sendData(_url: RequestInfo): Promise<void> {
+            let query: URLSearchParams = new URLSearchParams(localStorage);
+            _url = _url + "?" + query.toString();
+            let answer: Response = await fetch(_url);
+            let output: Answer = await answer.json();
+            let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
+            if (output.error != null) {
+                //displayResponse.className = "error";
+                displayResponse.innerText = output.error;
+                console.log("I got an error");
 
+            }
+            if (output.message != null) {
+                //displayResponse.className = "message";
+                displayResponse.innerText = output.message;
+                console.log("I got a message");
+            }
         }
-        if (output.message != null) {
-            //displayResponse.className = "message";
-            displayResponse.innerText = output.Message;
-            console.log("I got a message");
-        }
+        sendData("https://gis-communication.herokuapp.com");
     }
-    sendData("https://gis-communication.herokuapp.com");
-
 }

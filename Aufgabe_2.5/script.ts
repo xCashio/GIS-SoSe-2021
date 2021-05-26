@@ -165,13 +165,13 @@ namespace Aufgabe2_5 {
             let output: Answer = await answer.json();
             let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("3c");
             if (output.error != null) {
-                //displayResponse.className = "error";
+                displayResponse.className = "error";
                 displayResponse.innerText = output.error;
                 console.log("I got an error");
 
             }
             if (output.message != null) {
-                //displayResponse.className = "message";
+                displayResponse.className = "message";
                 displayResponse.innerText = output.message;
                 console.log("I got a message");
             }

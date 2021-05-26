@@ -10,3 +10,9 @@ body{
     background: darkgray;
     color: white;
 }
+.error{
+    color: red;
+}
+.message{
+    color: turquoise;
+}

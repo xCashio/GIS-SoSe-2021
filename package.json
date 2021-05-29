@@ -1,0 +1,21 @@
+{
+  "name": "gis-sose-2021",
+  "version": "1.0.0",
+  "description": "dbgissose2021",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./Aufgabe_3.1/server/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xCashio/GIS-SoSe-2021.git"
+  },
+  "author": "Dominik Breit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xCashio/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/xCashio/GIS-SoSe-2021#readme"
+}

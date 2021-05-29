@@ -17,7 +17,6 @@ export namespace P_3_1Server {
 
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {      //function Request granting access for everyone and giving back the sent message url
-        console.log("I hear voices!");
         console.log(_request.url);        
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");

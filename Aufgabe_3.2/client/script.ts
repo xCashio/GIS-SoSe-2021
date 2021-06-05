@@ -36,12 +36,13 @@ namespace P_3_2Server {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
-        let output: JsonAnswer = await answer.json();
+        let output: string = await answer.text();
+        let jsonOutput: JsonAnswer = JSON.parse(output.substring(0, 5));
         
 
         console.log("JSON: Antwort:");
-        console.log(output);
-        displayResponse.innerHTML = output.name;
+        console.log(jsonOutput);
+        displayResponse.innerHTML = jsonOutput.name;
         console.log(displayResponse);
         //console.log(answer);
         //console.log(await answer.text());

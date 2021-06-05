@@ -3,16 +3,18 @@ namespace P_3_2Server {
     let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("answer");
     async function sendDataHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        console.log(":" + formData.get("name"));
-        for (let entry of formData) {
-            console.log(entry);
-            console.log("name: " + entry[0]);
-            console.log("value: " + entry[1]);
-        }
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        //console.log(":" + formData.get("name"));
+        //for (let entry of formData) {
+        //    console.log(entry);
+        //    console.log("name: " + entry[0]);
+        //    console.log("value: " + entry[1]);
+        //}
+        
+       
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/html";
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: string = await answer.text();
@@ -20,23 +22,26 @@ namespace P_3_2Server {
     }
     async function sendDataJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        console.log(":" + formData.get("name"));
-        for (let entry of formData) {
-            console.log(entry);
-            console.log("name: " + entry[0]);
-            console.log("value: " + entry[1]);
-        }
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        //console.log(":" + formData.get("name"));
+        //for (let entry of formData) {
+        //    console.log(entry);
+        //    console.log("name: " + entry[0]);
+        //    console.log("value: " + entry[1]);
+        //}
+        
+        
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/json";
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: JsonAnswer = await answer.json();
-        displayResponse.innerHTML = output.name;
+        
 
         console.log("JSON: Antwort:");
         console.log(output);
+        displayResponse.innerHTML = output.name;
         console.log(displayResponse);
         //console.log(answer);
         //console.log(await answer.text());

@@ -34,9 +34,12 @@ var P_3_2Server;
         _url = _url + "?" + query.toString();
         let answer = await fetch(_url);
         let output = await answer.json();
-        displayResponse.innerHTML = output.name + " " + output.email + " " + output.subject;
+        displayResponse.innerHTML = output.name;
         console.log("JSON: Antwort:");
         console.log(output);
+        console.log(displayResponse);
+        //console.log(answer);
+        //console.log(await answer.text());
     }
     let sendButtonHTML = document.getElementById("htmlbutton");
     sendButtonHTML.addEventListener("click", sendDataHTML);

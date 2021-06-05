@@ -9,8 +9,8 @@ namespace P_3_2Server {
         //    console.log("name: " + entry[0]);
         //    console.log("value: " + entry[1]);
         //}
-        
-       
+
+
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/html";
         // tslint:disable-next-line: no-any
@@ -28,24 +28,24 @@ namespace P_3_2Server {
         //    console.log("name: " + entry[0]);
         //    console.log("value: " + entry[1]);
         //}
-        
-        
+
+
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/json";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
-        let output: string = await answer.text();
-        let jsonOutput: JsonAnswer = JSON.parse(output.substring(0, 5));
-        
+        //let output: string = await answer.text();
+        //let jsonOutput: string =  output.substring(6, output.length - 1);
+        let output: JsonAnswer = await answer.json();
+        //console.log(output.substring(6, output.length - 1));
 
         console.log("JSON: Antwort:");
-        console.log(jsonOutput);
-        displayResponse.innerHTML = jsonOutput.name;
+        console.log(output);
+        displayResponse.innerHTML = output.name;
         console.log(displayResponse);
-        //console.log(answer);
-        //console.log(await answer.text());
+        console.log(answer);
 
 
     }

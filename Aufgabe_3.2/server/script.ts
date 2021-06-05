@@ -31,6 +31,7 @@ export namespace P_3_2Server {
                 }
             }
             if (path == "/json") {
+                path = path.substring(6, path.length - 1);
                 let sentObject: string = JSON.stringify(url.query);
                 console.log(sentObject);
                 _response.write(sentObject);

@@ -35,6 +35,8 @@ var P_3_2Server;
         let answer = await fetch(_url);
         let output = await answer.json();
         displayResponse.innerHTML = output.name + " " + output.email + " " + output.subject;
+        console.log("JSON: Antwort:");
+        console.log(output);
     }
     let sendButtonHTML = document.getElementById("htmlbutton");
     sendButtonHTML.addEventListener("click", sendDataHTML);

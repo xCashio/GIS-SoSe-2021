@@ -34,6 +34,11 @@ namespace P_3_2Server {
         let answer: Response = await fetch(_url);
         let output: JsonAnswer = await answer.json();
         displayResponse.innerHTML = output.name + " " + output.email + " " + output.subject;
+        
+        console.log("JSON: Antwort:");
+        
+        console.log(output);
+        
     }
     
     let sendButtonHTML: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlbutton");

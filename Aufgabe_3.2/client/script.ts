@@ -23,7 +23,7 @@ namespace P_3_2Server {
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: JsonAnswer = await answer.json();
-        displayResponse.innerHTML += "Name: " + output.name + "Mail: " + output.email + " Subject: " +  output.subject;
+        displayResponse.innerHTML = "Name: " + output.name + "Mail: " + output.email + " Subject: " +  output.subject;
         console.log(answer);
         console.log(output);
         
@@ -31,10 +31,8 @@ namespace P_3_2Server {
 
     }
 
-    let sendButtonHTML: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlbutton");
-    sendButtonHTML.addEventListener("click", sendDataHTML);
-    let sendButtonJSON: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonbutton");
-    sendButtonJSON.addEventListener("click", sendDataJSON);
+    document.getElementById("htmlbutton").addEventListener("click", sendDataHTML);
+    document.getElementById("jsonbutton").addEventListener("click", sendDataJSON);
 
     interface JsonAnswer {
         name: string;

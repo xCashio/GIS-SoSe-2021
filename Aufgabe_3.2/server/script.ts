@@ -25,10 +25,10 @@ export namespace P_3_2Server {
             if (path == "/html") {
                 _response.setHeader("content-type", "text/html; charset=utf-8");
                 for (let key in url.query) {
-                    _response.write("<p>" + key + ":" + url.query[key] + "</p> \n");
+                    _response.write("<p>" + key + ":" + url.query[key] + "</p>");
                 }
             }
-            if (path == "/json") {
+            else if (path == "/json") {
                 _response.setHeader("content-type", "application/json");
                 let sentObject: string = JSON.stringify(url.query);
                 console.log(sentObject);

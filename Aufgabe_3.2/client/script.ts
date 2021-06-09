@@ -30,6 +30,7 @@ namespace P_3_2Server {
         console.log("JSON: Antwort:");
         console.log(output);
         displayResponse.innerHTML = output.name;
+
         console.log(answer);
 
 

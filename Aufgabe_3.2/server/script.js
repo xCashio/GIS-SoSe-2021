@@ -24,7 +24,7 @@ var P_3_2Server;
             if (path == "/html") {
                 _response.setHeader("content-type", "text/html; charset=utf-8");
                 for (let key in url.query) {
-                    _response.write(key + ":" + url.query[key] + "\n");
+                    _response.write("<p>" + key + ":" + url.query[key] + "</p> \n");
                 }
             }
             if (path == "/json") {

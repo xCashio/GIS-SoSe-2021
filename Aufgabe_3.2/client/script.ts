@@ -11,7 +11,7 @@ namespace P_3_2Server {
         _url = _url + "?" + query.toString();
         let answer: Response = await fetch(_url);
         let output: string = await answer.text();
-        displayResponse.innerText = output;
+        displayResponse.innerHTML = output;
     }
     async function sendDataJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
@@ -30,7 +30,6 @@ namespace P_3_2Server {
         console.log("JSON: Antwort:");
         console.log(output);
         displayResponse.innerHTML = output.name;
-        console.log(displayResponse);
         console.log(answer);
 
 

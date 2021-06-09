@@ -1,16 +1,9 @@
 
 namespace P_3_2Server {
-    let displayResponse: HTMLParagraphElement = <HTMLDivElement>document.getElementById("answer");
+    let displayResponse: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("answer");
     async function sendDataHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        //console.log(":" + formData.get("name"));
-        //for (let entry of formData) {
-        //    console.log(entry);
-        //    console.log("name: " + entry[0]);
-        //    console.log("value: " + entry[1]);
-        //}
-
-
+    
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/html";
         // tslint:disable-next-line: no-any
@@ -22,14 +15,7 @@ namespace P_3_2Server {
     }
     async function sendDataJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        //console.log(":" + formData.get("name"));
-        //for (let entry of formData) {
-        //    console.log(entry);
-        //    console.log("name: " + entry[0]);
-        //    console.log("value: " + entry[1]);
-        //}
-
-
+     
         let _url: RequestInfo = "https://dbgissose2021.herokuapp.com";
         _url += "/json";
         // tslint:disable-next-line: no-any

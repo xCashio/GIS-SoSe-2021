@@ -21,7 +21,7 @@ export namespace P_3_4 {
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let path: string = <string>url.pathname;
-            let input: Data = {name: url.query.name + "", mail: url.query.mail + "", subject: url.query.subject + ""};
+            let input: Data = {name: url.query.name + " ", mail: url.query.mail + " ", subject: url.query.subject + " "};
             if (path == "/sendData") {
                 let data: string = await sendDatabaseData(databaseURL, input);
                 _response.write(data);
@@ -47,7 +47,7 @@ export namespace P_3_4 {
         let orders: Mongo.Collection = mongoClient.db("LetzteAbgabe").collection("Daten");
         console.log("Database connection", orders != undefined);
         let cursor: Mongo.Cursor = orders.find();
-        let data: Data[] = await  cursor.toArray();
+        let data: Data[] = await cursor.toArray();
         return data;
     }
     async function sendDatabaseData(_url: string, _formData: Data): Promise<string> {

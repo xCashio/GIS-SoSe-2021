@@ -23,7 +23,7 @@ var P_3_4;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let path = url.pathname;
-            let input = { name: url.query.name + "", mail: url.query.mail + "", subject: url.query.subject + "" };
+            let input = { name: url.query.name + " ", mail: url.query.mail + " ", subject: url.query.subject + " " };
             if (path == "/sendData") {
                 let data = await sendDatabaseData(databaseURL, input);
                 _response.write(data);

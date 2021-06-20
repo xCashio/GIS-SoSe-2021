@@ -9,8 +9,7 @@ namespace P_3_4 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString(); 
         let answer: Response = await fetch(_url);
-        console.log(answer);
-               
+        console.log(answer);               
     }
     async function getData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);

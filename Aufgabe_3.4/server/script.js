@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.P_3_2Server = void 0;
+exports.P_3_4 = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-var P_3_2Server;
-(function (P_3_2Server) {
+var P_3_4;
+(function (P_3_4) {
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -31,6 +31,7 @@ var P_3_2Server;
             else if (path == "/getData") {
                 let data = await getDatabaseData(databaseURL);
                 _response.write(JSON.stringify(data));
+                console.log(data);
             }
         }
         _response.end();
@@ -54,5 +55,5 @@ var P_3_2Server;
         let answer = "ThisIsAnAnswer";
         return answer;
     }
-})(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
+})(P_3_4 = exports.P_3_4 || (exports.P_3_4 = {}));
 //# sourceMappingURL=script.js.map

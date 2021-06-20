@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 
 
-export namespace P_3_4 {
+export namespace P_3_2Server {
     console.log("Starting server");
     let port: number = Number(process.env.PORT);        //create Port = "Gateway" to server
     if (!port)

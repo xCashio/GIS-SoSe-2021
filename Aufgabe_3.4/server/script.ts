@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
-export namespace P_3_2Server {
+export namespace P_3_4 {
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -27,8 +27,10 @@ export namespace P_3_2Server {
                 _response.write(data);
             }
             else if (path == "/getData") {
-               let data: Data[] = await getDatabaseData(databaseURL);
+               let data: Data[] = await getDatabaseData(databaseURL);                             
                _response.write(JSON.stringify(data));
+               console.log(data);
+               
             }
         }
         _response.end();

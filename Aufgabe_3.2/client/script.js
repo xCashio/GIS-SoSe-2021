@@ -26,9 +26,7 @@ var P_3_2Server;
         console.log(answer);
         console.log(output);
     }
-    let sendButtonHTML = document.getElementById("htmlbutton");
-    sendButtonHTML.addEventListener("click", sendDataHTML);
-    let sendButtonJSON = document.getElementById("jsonbutton");
-    sendButtonJSON.addEventListener("click", sendDataJSON);
+    document.getElementById("htmlbutton").addEventListener("click", sendDataHTML);
+    document.getElementById("jsonbutton").addEventListener("click", sendDataJSON);
 })(P_3_2Server || (P_3_2Server = {}));
 //# sourceMappingURL=script.js.map

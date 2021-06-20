@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.P_3_2Server = void 0;
+exports.P_3_4 = void 0;
 const Http = require("http");
 const Url = require("url");
-var P_3_2Server;
-(function (P_3_2Server) {
+var P_3_4;
+(function (P_3_4) {
     console.log("Starting server");
     let port = Number(process.env.PORT); //create Port = "Gateway" to server
     if (!port)
@@ -36,5 +36,5 @@ var P_3_2Server;
         }
         _response.end();
     }
-})(P_3_2Server = exports.P_3_2Server || (exports.P_3_2Server = {}));
+})(P_3_4 = exports.P_3_4 || (exports.P_3_4 = {}));
 //# sourceMappingURL=script.js.map
